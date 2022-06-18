@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -11,6 +15,40 @@ a {
   text-decoration: none;
 }
 
+article a {
+  color: hsl(210deg, 80%, 35%); 
+}
+
 * {
   box-sizing: border-box;
+}
+
+h2 {
+  @apply mt-4 mb-1;
+  @apply text-lg font-bold;
+}
+
+.cl-book-body p,
+.cl-post-body p {
+  @apply mb-4;
+}
+
+
+.cl-book-body ul,
+.cl-post-body ul {
+  @apply my-4;
+  @apply list-disc list-inside;
+}
+
+
+.cl-book-body ol,
+.cl-post-body ol {
+  @apply my-4;
+  @apply list-decimal list-inside;
+}
+
+
+.cl-book-body li,
+.cl-post-body li {
+  @apply my-1;
 }

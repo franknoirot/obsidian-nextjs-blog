@@ -33,3 +33,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+
+# Contentlayer
+.contentlayer
+
+# Duplicated images
+/public/assets
