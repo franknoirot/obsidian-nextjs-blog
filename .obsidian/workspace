@@ -1,10 +1,10 @@
 {
   "main": {
-    "id": "90d39e68d1bb0250",
+    "id": "ebb34d0043c56c82",
     "type": "split",
     "children": [
       {
-        "id": "00407f1787244c66",
+        "id": "5a8238e22896101b",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -15,11 +15,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "15479ab1d5bf6b6c",
+    "id": "b1be1947a55637f8",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "d695ae0ba1eba831",
+        "id": "6821cad5aab5ccc9",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -27,7 +27,7 @@
         }
       },
       {
-        "id": "5300cbaf2a612df5",
+        "id": "d70e0ecb6ff9445d",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -45,11 +45,11 @@
     "currentTab": 0
   },
   "right": {
-    "id": "8f38b30478a12026",
+    "id": "df7a685e6a078d96",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "b67aab5e0acec10e",
+        "id": "04d6207829d8f6fb",
         "type": "leaf",
         "state": {
           "type": "backlink",
@@ -67,17 +67,6 @@
     ],
     "currentTab": 0
   },
-  "active": "00407f1787244c66",
-  "lastOpenFiles": [
-    "posts/a-new-test-post.md",
-    "books/atomic-habits.md",
-    "private/Untitled.md",
-    "private/Some new private thought.md",
-    "templates/post.md",
-    "templates/book.md",
-    "posts/large-hadron-collider.md",
-    "posts/postable-thought.md",
-    "private/a-privateish-thought.md",
-    "books/philosophy-of-software-design.md"
-  ]
+  "active": "5a8238e22896101b",
+  "lastOpenFiles": []
 }
