@@ -4,8 +4,8 @@ import { PropsWithChildren } from "react"
 
 const BaseLayout: React.FC<PropsWithChildren> = ({ children }) => {
     const navLinks = [
-      { label: 'Posts', href: '/posts' },
-      { label: 'Books', href: '/books' },
+      { label: 'Writing', href: '/posts' },
+      { label: 'Library', href: '/books' },
     ]
     return (<>
       <Nav navLinks={navLinks} />

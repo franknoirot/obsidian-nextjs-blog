@@ -9,6 +9,7 @@ import { ReactElement } from 'react-markdown/lib/react-markdown'
 import BaseLayout from 'components/layouts/BaseLayout'
 import { NextPageWithLayout } from 'pages/_app'
 import { PropsWithChildren } from 'react'
+import PostCorner from 'components/PostCorner'
 
 
 
@@ -63,11 +64,12 @@ const PostTemplate: NextPageWithLayout = (props) => {
 }
 
 PostTemplate.getLayout = function getLayout(page: ReactElement) {
-  return (
+  return (<>
     <BaseLayout>
       {page}
     </BaseLayout>
-  )
+    <PostCorner bgColor={{start: "#E4FFAC", end: "#BBC6FF"}} circleColor="#D23F3F" />
+  </>)
 }
 
 export default PostTemplate
