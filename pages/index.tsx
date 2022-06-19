@@ -3,7 +3,7 @@ import { compareDesc } from 'date-fns'
 import { allPosts, Post, allBooks, Book } from 'contentlayer/generated'
 import { ReactElement } from 'react-markdown/lib/react-markdown'
 import BaseLayout from 'components/layouts/BaseLayout'
-import { NextPageWithLayout } from './_app'
+import { NextPageWithLayout } from 'lib/utilityTypes'
 import PostCard from 'components/PostCard'
 import BookCard from 'components/BookCard'
 

@@ -2,10 +2,10 @@ import BookCorner, { IBookCornerProps } from "components/BookCorner"
 import { createContext, PropsWithChildren, useState } from "react"
 
 const defaultBookContext: IBookCornerProps = {
-  squareColor: 'red',
+  squareColor: 'transparent',
   bgColor: {
-    start: 'green',
-    end: 'blue',
+    start: 'transparent',
+    end: 'transparent',
   },
 }
 export const BookContext = createContext({ value: defaultBookContext, setValue: (() => null) as Function })

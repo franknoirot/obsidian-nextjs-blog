@@ -3,13 +3,11 @@ import { compareDesc } from 'date-fns'
 import { allBooks, Book } from 'contentlayer/generated'
 import { ReactElement } from 'react-markdown/lib/react-markdown'
 import BaseLayout from 'components/layouts/BaseLayout'
-import { NextPageWithLayout } from './_app'
+import { NextPageWithLayout } from 'lib/utilityTypes'
 import BookCard from 'components/BookCard'
 
 export async function getStaticProps() {
-  const Books = allBooks.sort((a, b) => {
-    return compareDesc(new Date(a.published), new Date(b.published))
-  })
+  const Books = allBooks.sort((a, b) => a.title < b.title ? -1 : 1)
 
   return { props: { Books } }
 }

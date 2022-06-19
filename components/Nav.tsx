@@ -31,7 +31,8 @@ const socialLinks = [
 ]
 
 const Nav: React.FC<INavProps> = ({ navLinks }) => {
-    const getCurrentClasses = (slug: string) => (useRouter().route.includes(slug))
+    const router = useRouter()
+    const getCurrentClasses = (slug: string) => (router.route.includes(slug))
         ? 'text-blue-800 bg-blue-100'
         : ''
 

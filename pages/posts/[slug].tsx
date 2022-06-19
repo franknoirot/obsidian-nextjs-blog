@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown'
 import { ParsedUrlQuery } from 'querystring'
 import { ReactElement } from 'react-markdown/lib/react-markdown'
 import BaseLayout from 'components/layouts/BaseLayout'
-import { NextPageWithLayout } from 'pages/_app'
+import { NextPageWithLayout } from 'lib/utilityTypes'
 import { PropsWithChildren } from 'react'
 import PostCorner from 'components/PostCorner'
 
