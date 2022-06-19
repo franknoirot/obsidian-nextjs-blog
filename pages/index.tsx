@@ -1,8 +1,11 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
-import { compareDesc, format, parseISO } from 'date-fns'
+import { compareDesc } from 'date-fns'
 import { allPosts, Post, allBooks, Book } from 'contentlayer/generated'
+import { ReactElement } from 'react-markdown/lib/react-markdown'
+import BaseLayout from 'components/layouts/BaseLayout'
+import { NextPageWithLayout } from './_app'
+import PostCard from 'components/PostCard'
+import BookCard from 'components/BookCard'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -13,37 +16,11 @@ export async function getStaticProps() {
   return { props: { posts, books } }
 }
 
-function PostCard(post: Post) {
-  return (
-    <div className="mb-6">
-      <h2 className="text-lg">
-        <Link href={post.url}>
-          <a className="text-blue-700 hover:text-blue-900">{post.title}</a>
-        </Link>
-      </h2>
-      <time dateTime={post.published} className="block text-sm text-slate-600">
-        {format(parseISO(post.published), 'LLLL d, yyyy')}
-      </time>
-    </div>
-  )
-}
+interface IHomeProps { posts: Post[], books: Book[] }
 
-function BookCard(book: Book) {
-  return (
-    <div className="mb-6">
-      <h2 className="text-lg">
-        <Link href={book.url}>
-          <a className="text-blue-700 hover:text-blue-900">{book.title}</a>
-        </Link>
-      </h2>
-      <time dateTime={(book.publishDate || book.originallyPublished).toString()} className="block text-sm text-slate-600">
-        {book.publishDate}
-      </time>
-    </div>
-  )
-}
-
-const Home: NextPage<{ posts: Post[], books: Book[] }> = ({ posts, books }) => {
+const Home: NextPageWithLayout = (props) => {
+  const { posts, books } = props as IHomeProps
+  
   return (
     <div className="max-w-2xl py-16 mx-auto text-center">
       <Head>
@@ -62,6 +39,12 @@ const Home: NextPage<{ posts: Post[], books: Book[] }> = ({ posts, books }) => {
         <BookCard key={'book-'+idx} {...book} />
       ))}
     </div>
+  )
+}
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <BaseLayout>{ page }</BaseLayout>
   )
 }
 

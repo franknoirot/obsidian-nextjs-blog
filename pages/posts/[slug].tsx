@@ -1,11 +1,16 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
-import { GetStaticPathsResult, GetStaticProps, NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import { parseObsidianLinks } from 'lib/markdown'
 import ReactMarkdown from 'react-markdown'
 import { ParsedUrlQuery } from 'querystring'
+import { ReactElement } from 'react-markdown/lib/react-markdown'
+import BaseLayout from 'components/layouts/BaseLayout'
+import { NextPageWithLayout } from 'pages/_app'
+import { PropsWithChildren } from 'react'
+
+
 
 export async function getStaticPaths() {
   const paths = allPosts.map((post) => post.url)
@@ -32,18 +37,17 @@ export const getStaticProps: GetStaticProps = (context) => {
   }
 }
 
-const PostLayout: NextPage<{ post: Post, postBody: string }> = ({ post, postBody }) => {
+interface IPostParams { post: Post, postBody: string }
+
+const PostTemplate: NextPageWithLayout = (props) => {
+  const { post, postBody } = props as IPostParams
+  
   return (
     <>
       <Head>
         <title>{post.title}</title>
       </Head>
       <article className="max-w-2xl py-16 mx-auto">
-        <div className="mb-6 text-center">
-          <Link href="/">
-            <a className="text-sm font-bold text-center text-blue-700 uppercase">Home</a>
-          </Link>
-        </div>
         <div className="mb-6 text-center">
           <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
           <time dateTime={post.published} className="text-sm text-slate-600">
@@ -58,4 +62,12 @@ const PostLayout: NextPage<{ post: Post, postBody: string }> = ({ post, postBody
   )
 }
 
-export default PostLayout
+PostTemplate.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <BaseLayout>
+      {page}
+    </BaseLayout>
+  )
+}
+
+export default PostTemplate

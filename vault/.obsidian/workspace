@@ -4,80 +4,100 @@
     "type": "split",
     "children": [
       {
-        "id": "00407f1787244c66",
+        "id": "18aa837d8be32848",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "posts/svelte-build-time-data-preprocessing.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "15479ab1d5bf6b6c",
-    "type": "mobile-drawer",
+    "id": "726742b910def023",
+    "type": "split",
     "children": [
       {
-        "id": "d695ae0ba1eba831",
-        "type": "leaf",
-        "state": {
-          "type": "file-explorer",
-          "state": {}
-        }
-      },
-      {
-        "id": "5300cbaf2a612df5",
-        "type": "leaf",
-        "state": {
-          "type": "search",
-          "state": {
-            "query": "",
-            "matchingCase": false,
-            "explainSearch": false,
-            "collapseAll": false,
-            "extraContext": false,
-            "sortOrder": "alphabetical"
+        "id": "e0683daeafa0656c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9beba7eab1a3b3e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "2bfb210a0a55df37",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
           }
-        }
+        ]
       }
     ],
-    "currentTab": 0
+    "direction": "horizontal",
+    "width": 311.5036334991455
   },
   "right": {
-    "id": "8f38b30478a12026",
-    "type": "mobile-drawer",
+    "id": "7fac736af6b6f92e",
+    "type": "split",
     "children": [
       {
-        "id": "b67aab5e0acec10e",
-        "type": "leaf",
-        "state": {
-          "type": "backlink",
-          "state": {
-            "collapseAll": false,
-            "extraContext": false,
-            "sortOrder": "alphabetical",
-            "showSearch": false,
-            "searchQuery": "",
-            "backlinkCollapsed": false,
-            "unlinkedCollapsed": true
+        "id": "a6bb8482fdb274c9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "918fb1f1c53577f1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "posts/svelte-build-time-data-preprocessing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
           }
-        }
+        ]
       }
     ],
-    "currentTab": 0
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
   },
-  "active": "00407f1787244c66",
+  "active": "18aa837d8be32848",
   "lastOpenFiles": [
+    "posts/svelte-build-time-data-preprocessing.md",
     "posts/a-new-test-post.md",
-    "books/atomic-habits.md",
+    "posts/postable-thought.md",
     "private/Untitled.md",
     "private/Some new private thought.md",
     "templates/post.md",
     "templates/book.md",
-    "posts/large-hadron-collider.md",
-    "posts/postable-thought.md",
     "private/a-privateish-thought.md",
+    "books/atomic-habits.md",
     "books/philosophy-of-software-design.md"
   ]
 }

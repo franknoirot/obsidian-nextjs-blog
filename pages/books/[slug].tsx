@@ -6,6 +6,9 @@ import { parseObsidianLinks } from 'lib/markdown'
 import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
 import { ParsedUrlQuery } from 'querystring'
+import { ReactElement } from 'react-markdown/lib/react-markdown'
+import BaseLayout from 'components/layouts/BaseLayout'
+import { NextPageWithLayout } from 'pages/_app'
 
 export async function getStaticPaths() {
   const paths = allBooks.map((book) => book.url)
@@ -32,7 +35,11 @@ export const getStaticProps: GetStaticProps = async(context) => {
   }
 }
 
-const BookLayout: NextPage<{ book: Book, bookBody: string }> = ({ book, bookBody }) => {
+interface IBookProps { book: Book, bookBody: string }
+
+const BookTemplate: NextPageWithLayout = (props) => {
+  const { book, bookBody } = props as IBookProps
+  
   return (
     <>
       <Head>
@@ -72,4 +79,10 @@ const BookLayout: NextPage<{ book: Book, bookBody: string }> = ({ book, bookBody
   )
 }
 
-export default BookLayout
+BookTemplate.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <BaseLayout>{ page }</BaseLayout>
+  )
+}
+
+export default BookTemplate

@@ -14,6 +14,16 @@ export const Post = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
+    category: {
+      type: 'enum',
+      options: ['technology', 'culture', 'seedlings'],
+      default: 'technology',
+      description: `The area of interest of this piece. "Seedlings" are rough thoughts that aren't fully formed yet.`,
+    },
+    description: {
+      type: 'string',
+      description: 'The metadata description of the post',
+    },
   },
   computedFields: {
     url: {
