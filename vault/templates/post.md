@@ -1,6 +1,8 @@
 ---
-title: {{title}}
-published: {{date}}T{{time}}
-tags:
-  - design
+title: 
+category: technology
+growthStage: budding
+created: {{date}}
+updated: {{date}}
+description: 
 ---

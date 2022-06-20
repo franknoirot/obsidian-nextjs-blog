@@ -1,7 +1,9 @@
 ---
 title: How to Get Svelte Build-Time Data with Preprocessing
 category: technology
-published: 2020-08-01
+growthStage: budding
+created: 2020-08-01
+updated: 2020-08-01
 description: Set up a pipeline that lets us bake data into our Svelte app at build time, and make it fashion.
 ---
 I really enjoy coding in Svelte. I've built a few small tools and toys with it, and I'm getting the opportunity to use it in production for the first time right now. But one thing that I've been missing from other toolsets is the ability to run code at build time to calculate or fetch data and pepper it into my Svelte app. [11ty](http://11ty.dev) calls this the [Data Cascade](https://www.11ty.dev/docs/data-cascade/) and [Gatsby](http://gatsbyjs.org) calls it the GraphQL layer.

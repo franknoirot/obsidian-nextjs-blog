@@ -8,7 +8,6 @@ import { ParsedUrlQuery } from 'querystring'
 import { ReactElement } from 'react-markdown/lib/react-markdown'
 import BaseLayout from 'components/layouts/BaseLayout'
 import { NextPageWithLayout } from 'lib/utilityTypes'
-import { PropsWithChildren } from 'react'
 import PostCorner from 'components/PostCorner'
 
 
@@ -51,8 +50,8 @@ const PostTemplate: NextPageWithLayout = (props) => {
       <article className="max-w-2xl py-16 mx-auto">
         <div className="mb-6 text-center">
           <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
-          <time dateTime={post.published} className="text-sm text-slate-600">
-            {format(parseISO(post.published), 'LLLL d, yyyy')}
+          <time dateTime={post.updated} className="text-sm text-slate-600">
+            {format(parseISO(post.updated), 'LLLL d, yyyy')}
           </time>
         </div>
         <ReactMarkdown>

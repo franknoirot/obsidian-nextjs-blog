@@ -4,5 +4,6 @@
   "attachmentFolderPath": "_assets",
   "alwaysUpdateLinks": true,
   "newFileLocation": "folder",
-  "newFileFolderPath": "private"
+  "newFileFolderPath": "private",
+  "showFrontmatter": false
 }

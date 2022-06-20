@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "posts/svelte-build-time-data-preprocessing.md",
+            "file": "public/projects/personal-library.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/svelte-build-time-data-preprocessing.md",
+                "file": "public/projects/personal-library.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "18aa837d8be32848",
   "lastOpenFiles": [
-    "posts/svelte-build-time-data-preprocessing.md",
-    "posts/a-new-test-post.md",
-    "posts/postable-thought.md",
+    "public/projects/personal-library.md",
+    "public/posts/postable-thought.md",
+    "public/posts/a-new-test-post.md",
+    "public/pages/about.md",
+    "private/obsidian-cms.md",
     "private/Untitled.md",
+    "public/books/dont-make-me-think.md",
+    "public/books/refactoring-ui.md",
     "private/Some new private thought.md",
-    "templates/post.md",
-    "templates/book.md",
-    "private/a-privateish-thought.md",
-    "books/atomic-habits.md",
-    "books/philosophy-of-software-design.md"
+    "templates/post.md"
   ]
 }

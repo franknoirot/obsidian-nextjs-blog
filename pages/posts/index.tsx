@@ -8,7 +8,7 @@ import PostCard from 'components/PostCard'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
-    return compareDesc(new Date(a.published), new Date(b.published))
+    return compareDesc(new Date(a.updated), new Date(b.updated))
   })
 
   return { props: { posts } }

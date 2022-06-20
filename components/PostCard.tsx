@@ -10,8 +10,8 @@ export default function PostCard(post: Post) {
             <a className="text-blue-700 hover:text-blue-900">{post.title}</a>
           </Link>
         </h2>
-        <time dateTime={post.published} className="block text-sm text-slate-600">
-          {format(parseISO(post.published), 'LLLL d, yyyy')}
+        <time dateTime={post.updated} className="block text-sm text-slate-600">
+          {format(parseISO(post.updated), 'LLLL d, yyyy')}
         </time>
       </div>
     )
