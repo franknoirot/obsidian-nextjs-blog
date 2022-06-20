@@ -1,2 +1,6 @@
 [functions]
 included_files = ["!node_modules/canvas/**/*"]
+
+[build]
+command = "npm run build"
+publish = ".next"
