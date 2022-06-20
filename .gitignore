@@ -40,5 +40,11 @@ yarn-error.log*
 
 # Duplicated images
 /public/assets
+
 # Local Netlify folder
 .netlify
+
+# Private Obsidian notes
+vault/.obsidian
+vault/private
+vault/templates
