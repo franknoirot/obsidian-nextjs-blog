@@ -9,7 +9,10 @@ import UpdateCard from 'components/UpdateCard'
 
 export async function getStaticProps() {
   const updates = allNowUpdates.sort((a, b) => {
-    return compareDesc(new Date(a._raw.sourceFileName), new Date(b._raw.sourceFileName))
+    return compareDesc(
+      new Date(a._raw.sourceFileName.slice(0, a._raw.sourceFileName.lastIndexOf('.'))),
+      new Date(b._raw.sourceFileName.slice(0, b._raw.sourceFileName.lastIndexOf('.'))),
+    )
   })
 
   allNowUpdates.forEach(update => {

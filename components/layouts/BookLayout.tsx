@@ -13,8 +13,6 @@ export const BookContext = createContext({ value: defaultBookContext, setValue: 
 const BookLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const [bookContext, setBookContext] = useState(defaultBookContext)
   
-    console.log({ bookContext })
-
   return (<>
     <BookContext.Provider value={{ value: bookContext, setValue: setBookContext }}>
       { children }

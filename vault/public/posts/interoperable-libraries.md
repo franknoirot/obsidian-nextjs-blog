@@ -6,8 +6,9 @@ created: 2020-08-01
 updated: 2020-08-01
 description: Thoughts after Maggie Appleton on how to create interoperable personal libraries.
 ---
-> [!Under Construction]
-> I am actively working on this note because the post it is based on has given me a lot to think about, please bear with me!
+<Callout title="Under Construction">
+I am actively working on this note because the post it is based on has given me a lot to think about, please bear with me!
+</Callout>
 
 This note is in response to Maggie Appleton's thoughtful note ["Interoperable Personal Libraries and Ad Hoc Reading Groups"](https://maggieappleton.com/interoperable-libraries). I have been thinking about some of these same problems over the past couple years and want to see if I can contribute anything to the discussion.
 

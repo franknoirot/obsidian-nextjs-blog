@@ -20,15 +20,17 @@ const PostLanding: NextPageWithLayout = (props) => {
   const { posts } = props as IPostLandingProps
   
   return (
-    <div className="max-w-2xl py-16 mx-auto text-center">
+    <div className="max-w-6xl py-16 mx-auto">
       <Head>
         <title>f(n): All Posts</title>
       </Head>
 
-      <h1 className="mb-8 text-3xl font-bold">All Posts</h1>
-      {posts.map((post, idx) => (
-        <PostCard key={idx} {...post} />
-      ))}
+      <h1 className="mb-8 text-6xl">All <strong>Posts</strong></h1>
+      <section className="posts-section">
+        {posts.map((post, idx) => (
+          <PostCard key={idx} {...post} />
+        ))}
+      </section>
     </div>
   )
 }

@@ -1,8 +1,11 @@
+import remarkFootnotes from 'remark-footnotes'
+import remarkPrism from 'remark-prism'
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `posts/**/*.md`,
+  filePathPattern: `posts/**/*.md*`,
+  contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
@@ -46,7 +49,7 @@ export const Post = defineDocumentType(() => ({
 
 export const Book = defineDocumentType(() => ({
     name: 'Book',
-    filePathPattern: `books/**/*.md`,
+    filePathPattern: `books/**/*.md*`,
     fields: {
         title: {
             type: 'string',
@@ -89,7 +92,7 @@ export const Book = defineDocumentType(() => ({
 
 export const NowUpdate = defineDocumentType(() => ({
   name: 'NowUpdate',
-  filePathPattern: `now/*.md`,
+  filePathPattern: `now/*.md*`,
   fields: {
       title: {
           type: 'string',
@@ -102,7 +105,7 @@ export const NowUpdate = defineDocumentType(() => ({
 
 export const Page = defineDocumentType(() => ({
   name: 'Page',
-  filePathPattern: `pages/**/*.md`,
+  filePathPattern: `pages/**/*.md*`,
   fields: {
       metaTitle: {
           type: 'string',
@@ -126,7 +129,7 @@ export const Page = defineDocumentType(() => ({
 
 export const Project = defineDocumentType(() => ({
   name: 'Project',
-  filePathPattern: `projects/*.md`,
+  filePathPattern: `projects/*.md*`,
   fields: {
     title: {
       type: 'string',
@@ -176,4 +179,5 @@ export default makeSource({
         Page,
         Project,
     ],
+    mdx: { remarkPlugins: [remarkFootnotes, remarkPrism] },
 })

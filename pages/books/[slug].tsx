@@ -80,26 +80,28 @@ const BookTemplate: NextPageWithLayout = (props) => {
       <Head>
         <title>{book.title} | franknoirot.co</title>
       </Head>
-      <article className="max-w-2xl py-16 mx-auto">
-        <div className="mb-6 text-center">
-          <h1 className="mb-1 text-3xl font-bold">{book.title}</h1>
-          <p>by {book.author}</p>
-          <time dateTime={(book.publishDate || book.originallyPublished).toString()} className="text-sm text-slate-600">
-            {book.publishDate || book.originallyPublished}
-          </time>
-        </div>
-        <div className='my-8 cl-book-cover'>
-          <div className='block mx-auto overflow-visible skew-y-3 w-fit' style={{background: 'radial-gradient(closest-side at 50% 99%, hsla(220deg, 20%, 4%, .2) 30%, transparent)'}}>
-            <Image src={'/assets/' + book.coverImg}
-              width="300"
-              height="300"
-              layout='intrinsic'
-              objectFit='contain'
-              alt={book.title + ' cover'}
-            />
+      <article className="max-w-6xl py-16 mx-auto">
+        <section className="grid items-center grid-cols-5 pb-12 mb-10 border-b">
+          <div className='col-span-2 cl-book-cover'>
+            <div className='block mx-auto overflow-visible skew-y-3 w-fit' style={{background: 'radial-gradient(closest-side at 50% 99%, hsla(220deg, 20%, 4%, .2) 30%, transparent)'}}>
+              <Image src={'/assets/' + book.coverImg}
+                width="350"
+                height="350"
+                layout='intrinsic'
+                objectFit='contain'
+                alt={book.title + ' cover'}
+              />
+            </div>
           </div>
-        </div>
-        <div className="cl-book-body">
+          <div className="col-span-3">
+            <h1 className="mb-1 text-4xl">{book.title}</h1>
+            <p>by {book.author}</p>
+            <time dateTime={(book.publishDate || book.originallyPublished).toString()} className="text-sm text-slate-600">
+              {book.publishDate || book.originallyPublished}
+            </time>
+          </div>
+        </section>
+        <div className="max-w-4xl mx-auto cl-book-body">
           <ReactMarkdown>
             {bookBody}
           </ReactMarkdown>

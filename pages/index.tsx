@@ -26,22 +26,29 @@ const Home: NextPageWithLayout = (props) => {
   const { posts, books, projects } = props as IHomeProps
   
   return (
-    <div className="max-w-2xl py-16 mx-auto text-center">
+    <div className="max-w-5xl py-16 mx-auto">
       <Head>
-        <title>Contentlayer Blog Example</title>
+        <title>Frank Noirot's Digital Garden</title>
       </Head>
 
-      <h1 className="mb-8 text-3xl font-bold">Contentlayer Blog Example</h1>
+      <section className="mb-16">
+        <h1 className="mb-2 text-6xl leading-tight"><strong>Frank Noirot</strong> is writing about development, design, ecology, and cities.</h1>
+        <p>Thanks for stopping by! This is my digital garden powered by Obsidian notes and NextJS.</p>
+      </section>
 
-      <h2>Posts</h2>
+      <h2>Notes</h2>
+      <section className='grid grid-cols-3 gap-2'>
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
+      </section>
       <hr className='my-8' />
       <h2>Books</h2>
-      {books.map((book, idx) => (
-        <BookCard key={'book-'+idx} {...book} />
-      ))}
+      <section className='book-section'>
+        {books.map((Book, idx) => (
+          <BookCard key={idx} {...Book} />
+        ))}
+      </section>
       <hr className='my-8' />
       <h2>Projects</h2>
       {projects.map((project, idx) => (

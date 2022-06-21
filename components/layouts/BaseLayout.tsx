@@ -11,7 +11,7 @@ const BaseLayout: React.FC<PropsWithChildren> = ({ children }) => {
     ]
     return (<>
       <Nav navLinks={navLinks} />
-      <main>{ children }</main>
+      <main className="mx-4">{ children }</main>
     </>)
 }
 

@@ -7,26 +7,28 @@ import { NextPageWithLayout } from 'lib/utilityTypes'
 import BookCard from 'components/BookCard'
 
 export async function getStaticProps() {
-  const Books = allBooks.sort((a, b) => a.title < b.title ? -1 : 1)
+  const books = allBooks.sort((a, b) => a.title < b.title ? -1 : 1)
 
-  return { props: { Books } }
+  return { props: { books } }
 }
 
-interface IBookLandingProps { Books: Book[] }
+interface IBookLandingProps { books: Book[] }
 
 const BookLanding: NextPageWithLayout = (props) => {
-  const { Books } = props as IBookLandingProps
+  const { books } = props as IBookLandingProps
   
   return (
-    <div className="max-w-2xl py-16 mx-auto text-center">
+    <div className="max-w-6xl py-16 mx-auto">
       <Head>
         <title>f(n): All Books</title>
       </Head>
 
-      <h1 className="mb-8 text-3xl font-bold">All Books</h1>
-      {Books.map((Book, idx) => (
-        <BookCard key={idx} {...Book} />
-      ))}
+      <h1 className="mb-8 text-6xl">All <strong>Books</strong></h1>
+      <section className='book-section'>
+        {books.map((book, idx) => (
+          <BookCard key={idx} {...book} />
+        ))}
+      </section>
     </div>
   )
 }

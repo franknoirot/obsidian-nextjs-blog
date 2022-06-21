@@ -1,17 +1,15 @@
 import { Book } from "contentlayer/generated";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function BookCard(book: Book) {
     return (
-      <div className="mb-6">
-        <h2 className="text-lg">
-          <Link href={book.url}>
-            <a className="text-blue-700 hover:text-blue-900">{book.title}</a>
-          </Link>
-        </h2>
-        <time dateTime={(book.publishDate || book.originallyPublished).toString()} className="block text-sm text-slate-600">
-          {book.publishDate}
-        </time>
+    <Link href={book.url}><a className="group">
+      <div className="mb-6 text-left">
+        <Image src={'/assets/'+book.coverImg} alt={book.title} width={180} height={240} objectFit="contain"/>
+        <h2 className="text-lg font-normal group-hover:text-blue-600">{book.title}</h2>
+        <p className="text-sm">by { book.author }</p>
       </div>
+    </a></Link>
     )
 }

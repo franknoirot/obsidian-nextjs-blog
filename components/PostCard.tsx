@@ -2,17 +2,19 @@ import { Post } from "contentlayer/generated";
 import { format, parseISO } from 'date-fns'
 import Link from "next/link";
 
-export default function PostCard(post: Post) {
+export default function PostCard(post: Post, headingLevel = 3) {
+
     return (
-      <div className="mb-6">
-        <h2 className="text-lg">
-          <Link href={post.url}>
-            <a className="text-blue-700 hover:text-blue-900">{post.title}</a>
-          </Link>
-        </h2>
-        <time dateTime={post.updated} className="block text-sm text-slate-600">
-          {format(parseISO(post.updated), 'LLLL d, yyyy')}
-        </time>
+    <Link href={post.url}><a className="p-2 transition-colors rounded group hover:bg-green-50">
+      <div className="">
+        <h3 className="mt-0 text-lg font-normal group-hover:text-green-900">{post.title}</h3>
+        <p className="text-sm">
+            <span className="inline-block mr-2 text-green-800 capitalize">{ post.growthStage }</span>
+            <time dateTime={post.updated} className="text-sm text-slate-600">
+            Last tended {format(parseISO(post.updated), 'LLLL d, yyyy')}
+            </time>
+        </p>
       </div>
+    </a></Link>
     )
 }

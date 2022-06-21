@@ -20,15 +20,17 @@ const ProjectLanding: NextPageWithLayout = (props) => {
   const { projects } = props as IProjectLandingProps
   
   return (
-    <div className="max-w-2xl py-16 mx-auto text-center">
+    <div className="max-w-6xl py-16 mx-auto">
       <Head>
         <title>f(n): All Projects</title>
       </Head>
 
-      <h1 className="mb-8 text-3xl font-bold">All Projects</h1>
-      {projects.map((project, idx) => (
-        <ProjectCard key={idx} {...project} />
-      ))}
+      <h1 className="mb-8 text-6xl">All <strong>Projects</strong></h1>
+      <section className="posts-section">
+        {projects.map((project, idx) => (
+          <ProjectCard key={idx} {...project} />
+        ))}
+      </section>
     </div>
   )
 }
