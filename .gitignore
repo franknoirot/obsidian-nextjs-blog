@@ -45,4 +45,5 @@ yarn-error.log*
 .netlify
 
 # Submodule vault
-vault/
+# vault/
+# !vault/public/
