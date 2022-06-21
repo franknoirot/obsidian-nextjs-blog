@@ -26,7 +26,7 @@ export const Post = defineDocumentType(() => ({
     },
     category: {
       type: 'enum',
-      options: ['technology', 'culture', 'seedlings'],
+      options: ['technology', 'culture'],
       default: 'technology',
       description: `The area of interest of this piece. "Seedlings" are rough thoughts that aren't fully formed yet.`,
     },
