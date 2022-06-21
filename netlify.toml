@@ -4,3 +4,4 @@ included_files = ["!node_modules/canvas/**/*"]
 [build]
 command = "npm run build"
 publish = ".next"
+environment = { NPM_VERSION = "8.1.4" }
