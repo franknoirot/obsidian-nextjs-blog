@@ -25,9 +25,11 @@ interface IParams extends ParsedUrlQuery {
   slug: string
 }
 
+type PostWithMdxOrMarkdown = Post & { body: { code: string }}
+
 export const getStaticProps: GetStaticProps = (context) => {
   const { slug } = context.params as IParams
-  const post = allPosts.find((post) => post._raw.sourceFileName.includes(slug)) as Post
+  const post = allPosts.find((post) => post._raw.sourceFileName.includes(slug)) as PostWithMdxOrMarkdown
   post.body.code = parseObsidianLinks(post.body.code)
 
   return {
@@ -37,7 +39,7 @@ export const getStaticProps: GetStaticProps = (context) => {
   }
 }
 
-interface IPostParams { post: Post }
+interface IPostParams { post: PostWithMdxOrMarkdown }
 
 interface ICodeComponentParams extends React.PropsWithChildren {
   node: any,

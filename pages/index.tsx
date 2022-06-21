@@ -28,7 +28,7 @@ const Home: NextPageWithLayout = (props) => {
   return (
     <div className="max-w-5xl py-16 mx-auto">
       <Head>
-        <title>Frank Noirot's Digital Garden</title>
+        <title>Frank Noirot&apos;s Digital Garden</title>
       </Head>
 
       <section className="mb-16">
