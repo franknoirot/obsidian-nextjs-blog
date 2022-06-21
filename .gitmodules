@@ -1,0 +1,3 @@
+[submodule "vault/public"]
+	path = vault/public
+	url = https://github.com/franknoirot/published-content

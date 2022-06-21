@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "cp -r ./vault/_assets public/assets",
-    "build": "next build",
+    "prebuild": "cp -r ./vault/public/_assets public/assets",
+    "build": "INIT_CWD=$PWD next build",
     "start": "next start",
     "lint": "next lint"
   },
