@@ -10,6 +10,7 @@ import BaseLayout from 'components/layouts/BaseLayout'
 import { NextPageWithLayout } from 'lib/utilityTypes'
 import PostCorner from 'components/PostCorner'
 import Callout from 'components/Callout'
+import { useRef } from 'react'
 
 
 
@@ -30,7 +31,7 @@ type PostWithMdxOrMarkdown = Post & { body: { code: string }}
 export const getStaticProps: GetStaticProps = (context) => {
   const { slug } = context.params as IParams
   const post = allPosts.find((post) => post._raw.sourceFileName.includes(slug)) as PostWithMdxOrMarkdown
-  post.body.code = parseObsidianLinks(post.body.code)
+  // post.body.code = parseObsidianLinks(post.body.code)
 
   return {
     props: {
@@ -50,7 +51,7 @@ interface ICodeComponentParams extends React.PropsWithChildren {
 const PostTemplate: NextPageWithLayout = (props) => {
   const { post } = props as IPostParams;
   const MdxBody = useMDXComponent(post.body.code)
-  
+    
   return (
     <>
       <Head>
@@ -60,6 +61,9 @@ const PostTemplate: NextPageWithLayout = (props) => {
         <div className="mb-8">
           <h1 className="mb-1 text-5xl leading-tight">{post.title}</h1>
           <div className="post-meta">
+            <p>
+              Growth Stage: <span className={"text-green-700 capitalize " + post.growthStage}>{ post.growthStage }</span>
+            </p>
             <p>
               Created on <time dateTime={post.created}>{format(parseISO(post.created), 'LLLL d, yyyy')}</time>
             </p>
@@ -75,11 +79,17 @@ const PostTemplate: NextPageWithLayout = (props) => {
 }
 
 PostTemplate.getLayout = function getLayout(page: ReactElement) {
+  const randomColor = Math.floor(Math.random() * 360)
+
   return (<>
     <BaseLayout>
       {page}
     </BaseLayout>
-    <PostCorner bgColor={{start: "#E4FFAC", end: "#BBC6FF"}} circleColor="#D23F3F" />
+    <PostCorner
+      className='w-1/5'
+      bgColor={{start: `hsl(${randomColor}deg, 40%, 95%)`, end: `hsl(${randomColor + 60}deg, 60%, 80%)`}}
+      circleColor={`hsl(${randomColor + 30}deg, 50%, 85%)`}
+    />
   </>)
 }
 

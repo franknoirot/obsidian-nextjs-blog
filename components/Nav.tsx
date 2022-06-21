@@ -38,7 +38,7 @@ const Nav: React.FC<INavProps> = ({ navLinks }: { navLinks: NavLink[] }) => {
         ? 'text-amber-800 bg-amber-100'
         : ''
 
-    return <nav className="sticky grid max-w-md grid-rows-2 px-4 py-2 mx-6 my-5 border rounded-lg border-amber-100 bg-amber-50 w-fit top-4 gap-x-4 gap-y-2" style={{gridTemplateColumns: 'auto 1fr'}}>
+    return <nav className="sticky z-50 grid max-w-md grid-rows-2 px-4 py-2 mx-6 my-5 border rounded-lg border-amber-100 bg-amber-50 w-fit top-4 gap-x-4 gap-y-2" style={{gridTemplateColumns: 'auto 1fr'}}>
         <Link href="/">
             <a className="row-span-2 hover:text-amber-500">
                 <Icon type="logo" width={37} />

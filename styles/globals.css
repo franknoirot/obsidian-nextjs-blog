@@ -40,6 +40,11 @@ article a {
   color: hsl(210deg, 80%, 35%); 
 }
 
+article a[target="_blank"]::after {
+  content: '⧉';
+  @apply inline-block ml-1;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -101,8 +106,27 @@ h3 {
   grid-auto-rows: auto;
 }
 
+.post-meta {
+  @apply pl-2 border-l text-slate-600;
+}
+
+.seedling::after,
+.budding::after,
+.evergreen::after {
+  @apply inline-block ml-1 align-baseline;
+}
+.seedling::after {
+  content: '🌱';
+}
+.budding::after {
+  content: '🪴';
+}
+.evergreen::after {
+  content: '🌲';
+}
+
 .post-meta p {
-  @apply mb-1 text-sm text-slate-600;
+  @apply mb-1 text-sm;
 }
 
 /**

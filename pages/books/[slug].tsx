@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async(context) => {
   }
 }
 
-type ExtractedColor = {
+export type ExtractedColor = {
   area: number,
   red: number,
   blue: number,
@@ -52,9 +52,10 @@ const BookTemplate: NextPageWithLayout = (props) => {
   const { book, bookBody } = props as IBookProps
   const { setValue } = useContext(BookContext)
 
-  function luminance(color: ExtractedColor) {
+  function luminance(color: ExtractedColor ) {
     return 0.2126*color.red + 0.7152*color.green + 0.0722*color.blue
   }
+  
 
   useEffect(() => {
     async function loadColors() {

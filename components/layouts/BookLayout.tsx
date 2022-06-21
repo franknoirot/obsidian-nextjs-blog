@@ -7,6 +7,7 @@ const defaultBookContext: IBookCornerProps = {
     start: 'transparent',
     end: 'transparent',
   },
+  className: '',
 }
 export const BookContext = createContext({ value: defaultBookContext, setValue: (() => null) as Function })
 
@@ -17,7 +18,10 @@ const BookLayout: React.FC<PropsWithChildren> = ({ children }) => {
     <BookContext.Provider value={{ value: bookContext, setValue: setBookContext }}>
       { children }
     </BookContext.Provider>
-    <BookCorner bgColor={bookContext.bgColor} squareColor={bookContext.squareColor} />
+    <BookCorner 
+      className='w-1/5'
+      bgColor={bookContext.bgColor}
+      squareColor={bookContext.squareColor} />
   </>)
 }
 

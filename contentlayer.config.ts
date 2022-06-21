@@ -1,6 +1,8 @@
 import remarkFootnotes from 'remark-footnotes'
 import remarkPrism from 'remark-prism'
+import rehypeExternalLinks from 'rehype-external-links'
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+// import { parseObsidianLinks } from './lib/markdown'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -179,5 +181,8 @@ export default makeSource({
         Page,
         Project,
     ],
-    mdx: { remarkPlugins: [remarkFootnotes, remarkPrism] },
+    mdx: {
+      remarkPlugins: [remarkFootnotes, remarkPrism],
+      rehypePlugins: [rehypeExternalLinks],
+    },
 })
