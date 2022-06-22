@@ -1,13 +1,12 @@
 import remarkFootnotes from 'remark-footnotes'
 import remarkPrism from 'remark-prism'
-import rehypeExternalLinks from 'rehype-external-links'
+import remarkExternalLinks from 'remark-external-links'
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 // import { parseObsidianLinks } from './lib/markdown'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `posts/**/*.md*`,
-  contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
@@ -109,12 +108,12 @@ export const Page = defineDocumentType(() => ({
   name: 'Page',
   filePathPattern: `pages/**/*.md*`,
   fields: {
-      metaTitle: {
+      title: {
           type: 'string',
           description: 'Meta title of the page.',
           required: true,
       },
-      metaDescription: {
+      description: {
           type: 'string',
           description: 'Meta description of the page.',
           required: true,
@@ -182,7 +181,6 @@ export default makeSource({
         Project,
     ],
     mdx: {
-      remarkPlugins: [remarkFootnotes, remarkPrism],
-      rehypePlugins: [rehypeExternalLinks],
+      remarkPlugins: [remarkFootnotes, remarkPrism, remarkExternalLinks],
     },
 })
