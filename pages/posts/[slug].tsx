@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import { GetStaticProps } from 'next'
+import ReactMarkdown from 'react-markdown'
 import { parseObsidianLinks } from 'lib/markdown'
 import { ParsedUrlQuery } from 'querystring'
 import { ReactElement } from 'react-markdown/lib/react-markdown'
@@ -26,12 +26,10 @@ interface IParams extends ParsedUrlQuery {
   slug: string
 }
 
-type PostWithMdxOrMarkdown = Post & { body: { code: string }}
-
 export const getStaticProps: GetStaticProps = (context) => {
   const { slug } = context.params as IParams
-  const post = allPosts.find((post) => post._raw.sourceFileName.includes(slug)) as PostWithMdxOrMarkdown
-  // post.body.code = parseObsidianLinks(post.body.code)
+  const post = allPosts.find((post) => post._raw.sourceFileName.includes(slug)) as Post
+  post.body.raw = parseObsidianLinks(post.body.raw)
 
   return {
     props: {
@@ -40,7 +38,7 @@ export const getStaticProps: GetStaticProps = (context) => {
   }
 }
 
-interface IPostParams { post: PostWithMdxOrMarkdown }
+interface IPostParams { post: Post }
 
 interface ICodeComponentParams extends React.PropsWithChildren {
   node: any,
@@ -50,7 +48,6 @@ interface ICodeComponentParams extends React.PropsWithChildren {
 
 const PostTemplate: NextPageWithLayout = (props) => {
   const { post } = props as IPostParams;
-  const MdxBody = useMDXComponent(post.body.code)
     
   return (
     <>
@@ -59,7 +56,7 @@ const PostTemplate: NextPageWithLayout = (props) => {
       </Head>
       <article className="max-w-3xl py-16 mx-auto cl-post-body">
         <div className="mb-8">
-          <h1 className="mb-1 text-5xl leading-tight">{post.title}</h1>
+          <h1 className="mb-1 text-5xl leading-tight first-letter:capitalize">{post.title}</h1>
           <div className="post-meta">
             <p>
               Growth Stage: <span className={"text-green-700 capitalize " + post.growthStage}>{ post.growthStage }</span>
@@ -72,7 +69,9 @@ const PostTemplate: NextPageWithLayout = (props) => {
             </p>
           </div>
         </div>
-        <MdxBody components={{ Callout }}/>
+        <ReactMarkdown>
+          {post.body.raw}
+        </ReactMarkdown>
       </article>
     </>
   )
