@@ -1,0 +1,4 @@
+[submodule "vault"]
+	path = vault
+	url = git@github.com:franknoirot/personal-notes.git
+	branch = main
